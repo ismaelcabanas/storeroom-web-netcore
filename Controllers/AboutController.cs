@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace storeroom_web_netcore.Controllers
 {
     
-    [Route("[controller]/[action]")]
+    [Route("company/[controller]/[action]")]
     public class AboutController
     {
         public string Phone() 
