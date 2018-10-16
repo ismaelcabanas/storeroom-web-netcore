@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace storeroom_web_netcore.Controllers
 {
     
-    [Route("about")]
+    [Route("[controller]")]
     public class AboutController
     {
         [Route("")]
@@ -12,7 +12,7 @@ namespace storeroom_web_netcore.Controllers
             return "+34666965434";
         }
 
-        [Route("address")]
+        [Route("[action]")]
         public string Address()
         {
             return "My Address";
