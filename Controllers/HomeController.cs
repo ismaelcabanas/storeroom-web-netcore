@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace storeroom_web_netcore.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello from HomeController";
+            return Content("Hello from HomeController");
         }
     }
 }
