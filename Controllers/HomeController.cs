@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using storeroom_web_netcore.Models;
 
 namespace storeroom_web_netcore.Controllers
 {
@@ -6,7 +7,9 @@ namespace storeroom_web_netcore.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Hello from HomeController");
+            var model = new Storeroom {Id = 1, Name = "My storeoom"};
+
+            return new ObjectResult(model);
         }
     }
 }
