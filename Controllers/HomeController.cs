@@ -9,7 +9,7 @@ namespace storeroom_web_netcore.Controllers
         {
             var model = new Storeroom {Id = 1, Name = "My storeoom"};
 
-            return View();
+            return View("home");
         }
     }
 }
