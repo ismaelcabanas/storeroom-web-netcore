@@ -1,9 +1,17 @@
+@model IEnumerable<storeroom_web_netcore.Models.Storeroom>
 <html>
     <head>
 
     </head>
     <body>
-        <h1>Storeroom: @Model.Name</h1>
-        <div>This is the Index Page</div>
+        <table>
+            @foreach (var storeroom in Model)
+            {
+                <tr>
+                    <td>@storeroom.Id</td>
+                    <td>@storeroom.Name</td>
+                </tr>
+            }
+        </table>
     </body>
 </html>

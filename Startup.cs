@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Routing;
+using storeroom_web_netcore.Services;
 
 namespace storeroom_web_netcore
 {
@@ -19,6 +20,7 @@ namespace storeroom_web_netcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IStoreroomData, InMemoryStoreroomData>(); 
             services.AddMvc();
         }
 
