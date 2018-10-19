@@ -1,11 +1,12 @@
-@model IEnumerable<storeroom_web_netcore.Models.Storeroom>
+@model storeroom_web_netcore.ViewModels.StoreroomViewModel
 <html>
     <head>
 
     </head>
     <body>
+        <h1>@Model.Message</h1>
         <table>
-            @foreach (var storeroom in Model)
+            @foreach (var storeroom in Model.Storerooms)
             {
                 <tr>
                     <td>@storeroom.Id</td>
