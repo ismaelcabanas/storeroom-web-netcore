@@ -73,7 +73,7 @@ namespace storeroom_web_netcore
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
         {
             routeBuilder.MapRoute("Default", 
-                "{controller}/{action}");
+                "{controller}/{action}/{id?}");
         }
     }
 }

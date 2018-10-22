@@ -24,5 +24,12 @@ namespace storeroom_web_netcore.Controllers
             var viewModel = new StoreroomViewModel(storerooms, message);    
             return View(viewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var storeroom = _storeroomData.Get(id);
+
+            return Content(storeroom.Name);
+        }
     }
 }

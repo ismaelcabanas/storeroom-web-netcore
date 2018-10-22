@@ -6,5 +6,6 @@ namespace storeroom_web_netcore.Services
     public interface IStoreroomData
     {
         IEnumerable<Storeroom> GetAll();
+        Storeroom Get(int id);
     }
 }
