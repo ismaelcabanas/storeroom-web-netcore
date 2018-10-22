@@ -28,7 +28,10 @@ namespace storeroom_web_netcore.Controllers
         public IActionResult Details(int id)
         {
             var storeroom = _storeroomData.Get(id);
-
+            if (storeroom == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return Content(storeroom.Name);
         }
     }
