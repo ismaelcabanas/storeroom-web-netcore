@@ -49,7 +49,7 @@ namespace storeroom_web_netcore.Controllers
             };
             Storeroom storeroomCreated = _storeroomData.Add(storeroom);
 
-            return View("Details", storeroomCreated);
+            return RedirectToAction(nameof(Details), new {id = storeroomCreated.Id});
         }
     }
 }
