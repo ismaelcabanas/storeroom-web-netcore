@@ -6,7 +6,7 @@ namespace storeroom_web_netcore.Services
 {
     public class InMemoryStoreroomData : IStoreroomData
     {
-        private IEnumerable<Storeroom> _storerooms;
+        private List<Storeroom> _storerooms;
 
         public InMemoryStoreroomData()
         {
@@ -15,6 +15,13 @@ namespace storeroom_web_netcore.Services
                 new Storeroom {Id = 1, Name = "Storeroom 1"},
                 new Storeroom {Id = 2, Name = "Storeroom 2"}
             };
+        }
+
+        public Storeroom Add(Storeroom storeroom)
+        {
+            storeroom.Id = _storerooms.Max(s => s.Id) + 1;
+            _storerooms.Add(storeroom);
+            return storeroom;
         }
 
         public Storeroom Get(int id)
@@ -26,5 +33,7 @@ namespace storeroom_web_netcore.Services
         {            
             return _storerooms.OrderBy(s => s.Name);
         }
+
+
     }
 }

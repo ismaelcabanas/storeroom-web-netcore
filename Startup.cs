@@ -20,7 +20,7 @@ namespace storeroom_web_netcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IStoreroomData, InMemoryStoreroomData>(); 
+            services.AddSingleton<IStoreroomData, InMemoryStoreroomData>(); 
             services.AddMvc();
         }
 

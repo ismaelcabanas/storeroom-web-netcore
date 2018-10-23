@@ -35,9 +35,21 @@ namespace storeroom_web_netcore.Controllers
             return View(storeroom);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(StoreroomEditViewModel model)
+        {
+            var storeroom = new Storeroom() {
+                Name = model.Name
+            };
+            Storeroom storeroomCreated = _storeroomData.Add(storeroom);
+
+            return View("Details", storeroomCreated);
         }
     }
 }

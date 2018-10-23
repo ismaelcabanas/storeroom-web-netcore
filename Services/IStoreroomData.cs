@@ -7,5 +7,6 @@ namespace storeroom_web_netcore.Services
     {
         IEnumerable<Storeroom> GetAll();
         Storeroom Get(int id);
+        Storeroom Add(Storeroom storeroom);
     }
 }
