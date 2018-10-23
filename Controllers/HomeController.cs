@@ -32,7 +32,12 @@ namespace storeroom_web_netcore.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            return Content(storeroom.Name);
+            return View(storeroom);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
