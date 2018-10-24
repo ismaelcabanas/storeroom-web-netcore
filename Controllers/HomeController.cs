@@ -44,12 +44,20 @@ namespace storeroom_web_netcore.Controllers
         [HttpPost]
         public IActionResult Create(StoreroomEditViewModel model)
         {
-            var storeroom = new Storeroom() {
-                Name = model.Name
-            };
-            Storeroom storeroomCreated = _storeroomData.Add(storeroom);
+            if (ModelState.IsValid)
+            {
+                var storeroom = new Storeroom() {
+                    Name = model.Name
+                };
+                Storeroom storeroomCreated = _storeroomData.Add(storeroom);
 
-            return RedirectToAction(nameof(Details), new {id = storeroomCreated.Id});
+                return RedirectToAction(nameof(Details), new {id = storeroomCreated.Id});
+            }
+            else
+            {
+                return View();    
+            }
+            
         }
     }
 }

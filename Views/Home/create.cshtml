@@ -1,6 +1,11 @@
 <h1>Create</h1>
 
 <form method="POST" action="/home/create">
-    <input type="text" name="Name" value="" />     
+    <div>
+        <label for="Name"></label>
+        <input type="text" name="Name" value="" /> 
+        <span asp-validation-for="Name"></span>    
+    </div>
+    
     <input type="submit" name="create" value="Save" />
 </form>
