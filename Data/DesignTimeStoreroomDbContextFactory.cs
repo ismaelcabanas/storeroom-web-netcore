@@ -19,7 +19,7 @@ namespace storeroom_web_netcore.Data
                 .Build();
 
             var builder = new DbContextOptionsBuilder();
-            builder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Storeroom;Trusted_Connection=True;MultipleActiveResultSets=true");
+            builder.UseSqlServer(configuration.GetConnectionString("Storeroom"));
 
             return new StoreroomDbContext(builder.Options);
         }
